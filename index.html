@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>친구 소개 - 문현빈</title>
+    <style>
+        /* 배경 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #ffe4e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 하트 배경 효과 */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffb6c1;
+            transform: rotate(45deg);
+            animation: float 6s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffb6c1;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+            100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+        }
+
+        /* 중앙 카드 */
+        .card {
+            background: #fff0f5;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffb6c1;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .card h1 {
+            margin: 20px 0 10px;
+            color: #ff69b4;
+        }
+
+        .card p {
+            color: #ff1493;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 하트 여러 개 추가 -->
+    <div class="heart" style="left:10%; animation-duration:5s;"></div>
+    <div class="heart" style="left:30%; animation-duration:7s;"></div>
+    <div class="heart" style="left:50%; animation-duration:6s;"></div>
+    <div class="heart" style="left:70%; animation-duration:8s;"></div>
+    <div class="heart" style="left:90%; animation-duration:5.5s;"></div>
+
+    <div class="card">
+        <img src="친구사진.jpg" alt="문현빈">
+        <h1>문현빈</h1>
+        <p>항상 웃는모습과 먹는모습이 이쁜 현빈이</p>
+    </div>
+</body>
+</html>
